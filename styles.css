@@ -1,0 +1,565 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: #F0F7FF;
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("./assets/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: h;
+    src: url("./assets/chinese\ rocks\ rg.ttf");
+}
+
+h1,
+h2,
+h3,
+button {
+    font-family: h;
+    color: #1E1E1E;
+}
+
+*:not(h1, h2, h3, button) {
+    font-family: montserrat;
+}
+
+.primary-button {
+    display: flex;
+    width: fit-content;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background: #111D2A;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    backdrop-filter: blur(40px);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.382);
+    padding: 1rem 0rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
+}
+
+header nav ul {
+    display: none;
+}
+
+section:not(.hero) {
+    margin-block: 10rem;
+}
+
+section>h1:not(.hero h1) {
+    font-size: 2.5rem;
+    margin: 5rem 0 2rem;
+}
+
+/* hero  */
+section.hero {
+    background-image: url("./assets/chris-zhang-uGh-hHVPRYI-unsplash.jpg");
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.hero .description {
+    margin: auto;
+    width: fit-content;
+}
+
+.hero h1 {
+    padding: 10rem 0 0;
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+}
+
+.hero button img {
+    max-width: 1.3rem;
+}
+
+/* gallery */
+.gallery {
+    width: 90vw;
+    margin: auto;
+}
+
+.gallery .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin: 0 0 2rem 0;
+}
+
+.image-gallery img {
+    width: 100%;
+    object-fit: cover;
+    border: 5px solid black
+}
+
+.image-gallery img:not(:first-child) {
+    object-fit: cover;
+    height: 20rem;
+}
+
+.image-gallery img:first-child,
+.image-gallery img:last-child {
+    grid-row: span 2;
+    grid-column: span 2;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* videos */
+.music-videos {
+    width: 90vw;
+    margin-inline: auto;
+}
+
+.music-videos .promo-video-section {
+    padding-top: 5rem;
+    margin-bottom: 15rem;
+    width: 90vw;
+    height: 34.5rem;
+    border: 5px solid #000;
+    background: linear-gradient(to right, #96C6FD, #96FDD2);
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+}
+
+.promo-video-section .left h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.right {
+    background-image: url("./assets/mike-cox-MEAXhjcnHEE-unsplash.jpg");
+    width: 100%;
+    aspect-ratio: 16/11;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid black;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    margin: 2rem 0 0 0;
+    position: relative;
+    box-shadow: 0px 4px 40px 10px rgba(150, 196, 249, 0.73);
+}
+
+.right>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 7.5rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.other-videos-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.videos > div {
+    width: 100%;
+    position: relative;
+}
+
+.videos>div img:first-of-type {
+    aspect-ratio: 16/11;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid #000;
+}
+
+.single-video>p {
+    font-size: 1.6rem;
+    font-family: h;
+    margin: 1rem 0;
+}
+
+.videos>div img:last-of-type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 7.5rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+section.latest {
+    width: 90vw;
+    margin: auto;
+}
+
+.latest article {
+    border: 5px solid black;
+    border-radius: 1rem;
+    overflow: hidden;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    background-color: white;
+    margin: 0 0 2rem 0;
+}
+
+article img {
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    width: 100%;
+    height:25rem;
+    object-fit: cover;
+    border-bottom: 5px solid black;
+}
+
+article>h1 {
+    margin: 1.5rem auto .5rem;
+    font-size: 2.2rem;
+    width: 90%;
+    font-weight: normal;
+}
+
+article p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: 90%;
+    margin: 1rem auto;
+    opacity: .7;
+}
+
+article a {
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto 2rem auto;
+    width: 90%;
+    text-align: right;
+    font-weight: 900;
+}
+
+/* footer */
+
+footer {
+    background-image:
+        linear-gradient(to bottom right, hsl(211, 42%, 6%) 61%, hsla(212, 42%, 6%, 0.956));
+}
+
+footer .footer-inner {
+    width: 90vw;
+    margin: auto;
+    padding-top: 5rem;
+    color: white;
+
+}
+
+.top-section .newsletter {
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    background-image:
+        linear-gradient(to bottom, #111d2a95, #111d2a3c),
+        url("./assets/sebastian-ervi-xJt6Gs20Uqc-unsplash.jpg");
+    background-size: cover;
+    margin: 0 0 2rem 0;
+}
+
+.newsletter h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin: 0 0 2rem 0;
+    font-weight: 100;
+}
+
+.newsletter input {
+    width: 100%;
+    margin: auto auto 2rem;
+    padding: 1.8rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+footer .links-container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.footer-inner .top-section {
+    margin-bottom: 4rem;
+}
+
+.links-container h1,
+.bottom-section h1 {
+    color: white;
+    opacity: .6;
+    font-weight: normal;
+}
+
+.footer-inner ul li {
+    list-style-type: none;
+    font-size: 1.4rem;
+    margin: 1rem 0 0 0;
+}
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    align-items: start;
+    justify-content: space-between;
+    row-gap: 4rem;
+}
+
+.bottom-section .socials {
+    grid-column: 1/3;
+}
+
+.socials .social-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socials img {
+    max-width: 4rem;
+    
+}
+
+.footer-inner .gallery-links {
+    justify-self: end;
+}
+
+footer hr {
+    margin: 5rem 0;
+}
+
+footer .footer-logo {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+@media screen and (min-width: 900px) {
+    header nav > img{
+        display:none;
+    }
+
+    header nav ul {
+        display: initial;
+    }
+
+    header nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 3rem;
+    }
+
+    header ul li{
+        list-style-type: none;
+        font-size: 1.4rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    section.hero{
+        height:120vh;
+    }
+
+    .hero h1 {
+        font-size: 5.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .gallery .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        align-items: start;
+        margin: 0 0 2rem 0;
+    }
+
+    .image-gallery img:first-child,
+.image-gallery img:last-child {
+    grid-row: span 2;
+    grid-column: auto;
+    height: 100%;
+    object-fit: cover;
+    grid-column: span 2;
+}
+
+.image-gallery img:nth-child(3){
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.image-gallery img:nth-child(4){
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.music-videos .promo-video-section{
+    display:flex;
+    padding: 4rem 2rem;
+    height: auto;
+    position: relative;
+}
+
+.promo-video-section .left h1 {
+    text-align: left;
+    margin: 0 0 2rem 0;
+    max-width: 50%;
+}
+
+.promo-video-section .left button{
+    margin: 0;
+}
+
+.promo-video-section .right{
+    width: 50rem;
+    aspect-ratio: 1/1;
+    height: 32rem;
+    position: absolute;
+    right: 2rem;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    margin: 0;
+    
+    box-shadow: 0px 4px 15px 5px rgba(150, 196, 249, 0.38);
+}
+
+.other-videos-section .videos{
+    display: flex;
+    column-gap: 2rem;
+    overflow-x: scroll;
+    padding-bottom: 6rem;
+}
+
+.videos > div{
+    height: 20rem;
+    aspect-ratio: 16/9;
+}
+
+.videos>div img:last-of-type {
+    max-width: 4.5rem;
+}
+
+.latest .blogs{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    column-gap: 2rem;
+}
+
+.latest button{
+    margin: 0 auto 4rem ;
+}
+
+.footer-inner .top-section{
+    display:flex;
+    align-items: start;
+}
+
+.footer-inner .newsletter{
+    height: 25rem;
+    width: 45rem;
+    margin: 0 10rem 0 0;
+}
+
+.newsletter h1{
+    max-width: 80%;
+    margin:2rem auto;
+}
+
+.newsletter input{
+    display:block;
+    width: 90%;
+    margin:0 auto 1rem auto;
+}
+
+.links-container > div:first-of-type{
+    margin: 0 9rem 0 0;
+}
+
+.links-container > div ul li{
+    margin-bottom: 2rem;
+}
+
+.footer-inner .bottom-section{
+    display: flex;
+    justify-content: unset;
+}
+
+.bottom-section > div ul li{
+    margin-bottom: 2rem;
+}
+
+.bottom-section .socials{
+    height: 25rem;
+    width: 45rem;
+    margin: 0 10rem 0 0;
+}
+
+.bottom-section .meet-greet{
+    margin: 0 5rem 0 0;
+}
+
+.socials .social-images{
+    max-width: 25rem;
+    margin: 1rem 0 0 0;
+}
+
+footer .footer-logo {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+
+}
+}
