@@ -29,6 +29,10 @@ button {
     color: #1E1E1E;
 }
 
+button{
+    cursor: pointer;
+}
+
 *:not(h1, h2, h3, button) {
     font-family: montserrat;
 }
@@ -48,12 +52,22 @@ button {
     margin: auto;
 }
 
+.gallery,
+.music-videos,
+.latest,
+.footer-inner{
+    max-width:60rem;
+}
+
 header {
     width: 100%;
     backdrop-filter: blur(40px);
-    position: absolute;
     background-color: rgba(0, 0, 0, 0.382);
     padding: 1rem 0rem;
+    top: 0;
+    left:0;
+    position: absolute;
+    z-index: 9;
 }
 
 header nav {
@@ -69,7 +83,7 @@ header nav ul {
 }
 
 section:not(.hero) {
-    margin-block: 10rem;
+    margin: 5rem auto 15rem auto;
 }
 
 section>h1:not(.hero h1) {
@@ -84,11 +98,26 @@ section.hero {
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
+    position: relative;
+}
+
+section.hero::after{
+    content:"";
+    width:100%;
+    height:100%;
+    background-color: hsla(211, 42%, 60%, 0.515);
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 8;
+    mix-blend-mode: overlay;
 }
 
 .hero .description {
     margin: auto;
     width: fit-content;
+    position: relative;
+    z-index: 9;
 }
 
 .hero h1 {
@@ -144,8 +173,8 @@ section.hero {
 
 .music-videos .promo-video-section {
     padding-top: 5rem;
-    margin-bottom: 15rem;
-    width: 90vw;
+    margin-bottom: 17rem;
+    width: 100%;
     height: 34.5rem;
     border: 5px solid #000;
     background: linear-gradient(to right, #96C6FD, #96FDD2);
@@ -161,14 +190,15 @@ section.hero {
     background-image: url("./assets/mike-cox-MEAXhjcnHEE-unsplash.jpg");
     width: 100%;
     aspect-ratio: 16/11;
+    max-height:30rem;
     background-position: center;
     background-size: cover;
     border: 5px solid black;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
     margin: 2rem 0 0 0;
     position: relative;
     box-shadow: 0px 4px 40px 10px rgba(150, 196, 249, 0.73);
@@ -189,6 +219,26 @@ section.hero {
 .other-videos-section h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+.other-videos-section .button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:14rem;
+    margin: auto;
+}
+
+.button-container button{
+    padding-inline: 2rem;
+}
+
+.button-container button:first-child{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 
 .videos > div {
@@ -275,8 +325,8 @@ article a {
 /* footer */
 
 footer {
-    background-image:
-        linear-gradient(to bottom right, hsl(211, 42%, 6%) 61%, hsla(212, 42%, 6%, 0.956));
+    background: linear-gradient(110deg, #111D2A 0%, #293C45 99.74%);
+    margin-top: 5rem;
 }
 
 footer .footer-inner {
@@ -289,16 +339,14 @@ footer .footer-inner {
 
 .top-section .newsletter {
     padding: 2rem;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
+    border-radius: 2rem;
     background-image:
-        linear-gradient(to bottom, #111d2a95, #111d2a3c),
-        url("./assets/sebastian-ervi-xJt6Gs20Uqc-unsplash.jpg");
+    linear-gradient(rgba(44, 75, 109, 0.70), rgba(44, 75, 109, 0.70)), 
+    url("./assets/matthew-kalapuch-sqJ4tLBiurw-unsplash.jpg");
+    backdrop-filter: blur(2px);
     background-size: cover;
-    margin: 0 0 2rem 0;
+    margin: 0 auto 4rem ;
+    max-width:45rem;
 }
 
 .newsletter h1 {
@@ -373,7 +421,8 @@ footer .links-container {
 }
 
 footer hr {
-    margin: 5rem 0;
+    margin: 5rem auto;
+    width:100%;
 }
 
 footer .footer-logo {
@@ -383,6 +432,15 @@ footer .footer-logo {
 }
 
 @media screen and (min-width: 900px) {
+    .gallery,
+.music-videos,
+.latest,
+.footer-inner,
+header nav{
+    max-width:120rem;
+}
+
+
     header nav > img{
         display:none;
     }
@@ -421,6 +479,11 @@ footer .footer-logo {
         gap: 1rem;
         align-items: start;
         margin: 0 0 2rem 0;
+        height:55rem;
+    }
+
+    .image-gallery img{
+        min-height: 100%;
     }
 
     .image-gallery img:first-child,
@@ -447,6 +510,7 @@ footer .footer-logo {
     padding: 4rem 2rem;
     height: auto;
     position: relative;
+    margin-bottom: 10rem;
 }
 
 .promo-video-section .left h1 {
@@ -473,7 +537,7 @@ footer .footer-logo {
     -o-transform: translateY(-50%);
     margin: 0;
     
-    box-shadow: 0px 4px 15px 5px rgba(150, 196, 249, 0.38);
+    box-shadow: 0px 4px 40px 10px rgba(150, 196, 249, 0.73); 
 }
 
 .other-videos-section .videos{
@@ -499,7 +563,7 @@ footer .footer-logo {
 }
 
 .latest button{
-    margin: 0 auto 4rem ;
+    margin: 2rem auto 8rem ;
 }
 
 .footer-inner .top-section{
