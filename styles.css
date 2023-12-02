@@ -93,7 +93,7 @@ section>h1:not(.hero h1) {
 
 /* hero  */
 section.hero {
-    background-image: url("./assets/chris-zhang-uGh-hHVPRYI-unsplash.jpg");
+    background-image: url("./assets/chris-zhang-uGh-hHVPRYI-unsplash-min.jpg");
     background-position: 50% 40%;
     background-repeat: no-repeat;
     height: 100vh;
@@ -187,7 +187,7 @@ section.hero::after{
 }
 
 .right {
-    background-image: url("./assets/mike-cox-MEAXhjcnHEE-unsplash.jpg");
+    background-image: url("./assets/mike-cox-MEAXhjcnHEE-unsplash-min.jpg");
     width: 100%;
     aspect-ratio: 16/11;
     max-height:30rem;
@@ -342,7 +342,7 @@ footer .footer-inner {
     border-radius: 2rem;
     background-image:
     linear-gradient(rgba(44, 75, 109, 0.70), rgba(44, 75, 109, 0.70)), 
-    url("./assets/matthew-kalapuch-sqJ4tLBiurw-unsplash.jpg");
+    url("./assets/matthew-kalapuch-sqJ4tLBiurw-unsplash-min.jpg");
     backdrop-filter: blur(2px);
     background-size: cover;
     margin: 0 auto 4rem ;
@@ -466,7 +466,7 @@ header nav{
     section.hero{
         height:120vh;
     }
-
+ 
     .hero h1 {
         font-size: 5.2rem;
         margin-bottom: 3rem;
